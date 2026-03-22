@@ -1,22 +1,31 @@
-<HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Máy tính tổng</title>
+    <meta charset="utf-8">
+</head>
+<body>
 
-<HEAD>
-<TITLE>Thay đổi giá trị của thuộc tính</TITLE>
-<META http-equiv="Content-Type" content="text/html; charset=utf-8">
-</HEAD>
+    <h2>Nhập hai số để tính tổng</h2>
 
-<BODY>
-<h2>Hãy nhập hai số và click vào nút Tính tổng</h2>
+    <input type="number" id="so1"> +
+    <input type="number" id="so2"> =
+    <input type="text" id="ketQua" readonly>
 
-<INPUT type="text" name="SoHang1" id="SoHang1"> +
-<INPUT type="text" name="SoHang2" id="SoHang2"> =
-<INPUT type="text" name="KetQua" id="KetQua">
+    <button onclick="tinh()">Tính tổng</button>
 
-<INPUT type="button" value="Tính tổng"
-onClick="document.getElementById('KetQua').value = 
-         parseFloat(document.getElementById('SoHang1').value) + 
-         parseFloat(document.getElementById('SoHang2').value)">
+    <script>
+        function tinh() {
+            var s1 = parseFloat(document.getElementById('so1').value);
+            var s2 = parseFloat(document.getElementById('so2').value);
+            
+            if (!isNaN(s1) && !isNaN(s2)) {
+                document.getElementById('ketQua').value = s1 + s2;
+            } else {
+                alert("Vui lòng nhập số hợp lệ");
+            }
+        }
+    </script>
 
-</BODY>
-
-</HTML>
+</body>
+</html>

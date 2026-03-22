@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Sự kiện di chuyển chuột</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
     <style>
         #status-bar {
             position: fixed;
@@ -12,30 +12,28 @@
             background-color: #f1f1f1;
             border-top: 1px solid #ccc;
             padding: 5px;
-            font-size: 14px;
             height: 25px;
         }
-        body { font-family: Arial; padding-bottom: 50px; }
     </style>
 </head>
 <body>
 
-    Họ tên: <input type="text" name="HoTen" onMouseMove="ShowStatus('Bạn đang di chuyển chuột vào ô Họ Tên')">
+    Họ tên: 
+    <input type="text" onmousemove="show('Bạn đang di chuyển chuột vào ô Họ Tên')">
     <br><br>
 
     Giới tính: 
-    <input type="radio" name="GioiTinh" onMouseMove="ShowStatus('Bạn đang di chuyển chuột vào lựa chọn Nam')"> Nam
-    <input type="radio" name="GioiTinh" onMouseMove="ShowStatus('Bạn đang di chuyển chuột vào lựa chọn Nữ')"> Nữ
+    <input type="radio" name="gt" onmousemove="show('Bạn chọn Nam')"> Nam
+    <input type="radio" name="gt" onmousemove="show('Bạn chọn Nữ')"> Nữ
     <br><br>
 
-    <input type="button" value="Gửi" onMouseMove="ShowStatus('Bạn đang di chuyển chuột vào nút Gửi')">
+    <input type="button" value="Gửi" onmousemove="show('Bạn đang ở nút Gửi')">
 
     <div id="status-bar">Sẵn sàng...</div>
 
-    <script language="JavaScript">
-        function ShowStatus(msg) {
+    <script>
+        function show(msg) {
             document.getElementById("status-bar").innerText = msg;
-            window.status = msg;
         }
     </script>
 

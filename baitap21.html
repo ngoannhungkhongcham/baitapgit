@@ -1,30 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Kiểm tra độ dài ký tự</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
 </head>
 <body>
 
-    <textarea id="NoiDung" name="NoiDung" rows="5" cols="40" oninput="DemKyTu()"></textarea>
+    <p>Nhập nội dung (Tối đa 200 ký tự):</p>
+    <textarea id="NoiDung" rows="5" cols="40" oninput="dem()"></textarea>
     <br>
     
-    <label for="SoKyTu">Số kí tự đã nhập vào: </label>
-    <input type="text" id="SoKyTu" name="SoKyTu" readonly>
+    <label>Số ký tự: </label>
+    <input type="text" id="SoKyTu" value="0" readonly>
 
-    <script language="JavaScript">
-        function DemKyTu() {
-            var txt = document.getElementById("NoiDung");
-            var box = document.getElementById("SoKyTu");
-            var doDai = txt.value.length;
-
-            box.value = doDai;
+    <script>
+        function dem() {
+            var vungNhap = document.getElementById("NoiDung");
+            var oHienThi = document.getElementById("SoKyTu");
+            var doDai = vungNhap.value.length;
 
             if (doDai > 200) {
-                alert("Bạn đã gõ quá số ký tự cho phép!");
-                txt.value = txt.value.substring(0, 200);
-                box.value = 200;
+                alert("Bạn đã gõ quá 200 ký tự!");
+                // Cắt bỏ các ký tự thừa
+                vungNhap.value = vungNhap.value.substring(0, 200);
+                doDai = 200;
             }
+
+            oHienThi.value = doDai;
         }
     </script>
 
