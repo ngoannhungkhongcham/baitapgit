@@ -1,17 +1,26 @@
-<HTML>
-<HEAD>
-    <TITLE>Tính tuổi</TITLE>
-</HEAD>
-<BODY>
-    <script language="JavaScript">
-        var D = new Date();
-        var NamHienTai = D.getFullYear(); 
-        var NamSinh = prompt("Bạn sinh năm bao nhiêu ? : ", "");
-        
-        if (NamSinh != null && NamSinh != "") {
-            var Tuoi = NamHienTai - NamSinh;
-            alert("Tuổi của bạn bây giờ là : " + Tuoi);
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Tuổi</title>
+</head>
+<body>
+    <script>
+        var thoiGian = new Date();
+        var namHienTai = thoiGian.getFullYear(); 
+
+        var namSinh = prompt("Vui lòng nhập năm sinh của bạn:", "");
+
+        if (namSinh !== null && namSinh !== "") {
+            namSinh = parseInt(namSinh);
+
+            if (namSinh <= namHienTai) {
+                var tuoi = namHienTai - namSinh;
+                alert("Năm nay là " + namHienTai + ". Tuổi của bạn là: " + tuoi);
+            } else {
+                alert("Năm sinh không hợp lệ! Vui lòng nhập năm sinh nhỏ hơn hoặc bằng " + namHienTai);
+            }
         }
     </script>
-</BODY>
-</HTML>
+</body>
+</html>

@@ -1,19 +1,25 @@
-<HTML>
-<HEAD>
-    <TITLE>Tính tuổi</TITLE>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tính tuổi</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-</HEAD>
-<BODY>
+</head>
+<body>
     <script language="JavaScript">
-        var D = new Date();
-        var NamSinh, NamHienTai;
-        NamHienTai = D.getFullYear();
+        var d = new Date();
+        var namHienTai = d.getFullYear();
+        var namSinh;
 
         do {
-            NamSinh = prompt("Bạn sinh năm bao nhiêu : ", "");
-        } while (parseInt(NamSinh) > NamHienTai || isNaN(NamSinh));
+            namSinh = prompt("Bạn sinh năm bao nhiêu : ", "");
+            
+            if (namSinh !== null) {
+                namSinh = parseInt(namSinh);
+            }
+        } while (namSinh > namHienTai || isNaN(namSinh));
 
-        alert("Tuổi của bạn bây giờ là : " + (NamHienTai - NamSinh));
+        var tuoi = namHienTai - namSinh;
+        alert("Tuổi của bạn bây giờ là : " + tuoi);
     </script>
-</BODY>
-</HTML>
+</body>
+</html>
