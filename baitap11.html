@@ -1,0 +1,35 @@
+<html>
+  <title>Sắp xếp mảng</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <body>
+    <script language="JavaScript">
+      var SoLuong, x, i;
+      var DS = new Array(100); // Khai báo mảng tối đa 100 phần tử
+
+      SoLuong = prompt("Bạn cần nhập bao nhiêu người: ", 5);
+
+      // Nhập danh sách
+      for (i = 0; i < SoLuong; i++) {
+        DS[i] = prompt("Nhập vào họ tên: ", "");
+      }
+
+      // Cắt mảng đúng số phần tử đã nhập
+      DS = DS.slice(0, SoLuong);
+
+      // Sắp xếp theo Alphabet (có hỗ trợ tiếng Việt)
+      DS.sort(function (a, b) {
+        return a.localeCompare(b, "vi");
+      });
+
+      // Hiển thị kết quả
+      document.write("<h2>Danh sách đã sắp xếp là:</h2>");
+
+      for (x in DS) {
+        // Duyệt mảng bằng for...in
+        document.write(DS[x] + "<br>");
+      }
+    </script>
+  </body>
+  </HTML>
+</html>

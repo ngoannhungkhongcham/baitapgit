@@ -1,0 +1,22 @@
+<HTML>
+
+<HEAD>
+<TITLE>Thay đổi giá trị của thuộc tính</TITLE>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+</HEAD>
+
+<BODY>
+<h2>Hãy nhập hai số và click vào nút Tính tổng</h2>
+
+<INPUT type="text" name="SoHang1" id="SoHang1"> +
+<INPUT type="text" name="SoHang2" id="SoHang2"> =
+<INPUT type="text" name="KetQua" id="KetQua">
+
+<INPUT type="button" value="Tính tổng"
+onClick="document.getElementById('KetQua').value = 
+         parseFloat(document.getElementById('SoHang1').value) + 
+         parseFloat(document.getElementById('SoHang2').value)">
+
+</BODY>
+
+</HTML>
