@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Máy tính tổng</title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+    <h2>Nhập hai số để tính tổng</h2>
+
+    <input type="number" id="so1"> +
+    <input type="number" id="so2"> =
+    <input type="text" id="ketQua" readonly>
+
+    <button onclick="tinh()">Tính tổng</button>
+
+    <script>
+        function tinh() {
+            var s1 = parseFloat(document.getElementById('so1').value);
+            var s2 = parseFloat(document.getElementById('so2').value);
+            
+            if (!isNaN(s1) && !isNaN(s2)) {
+                document.getElementById('ketQua').value = s1 + s2;
+            } else {
+                alert("Vui lòng nhập số hợp lệ");
+            }
+        }
+    </script>
+
+</body>
+</html>

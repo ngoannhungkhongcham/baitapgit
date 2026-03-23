@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sắp xếp mảng</title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+    <script>
+        var soLuong = prompt("Bạn cần nhập bao nhiêu người:", 5);
+        var ds = [];
+
+        for (var i = 0; i < soLuong; i++) {
+            ds[i] = prompt("Nhập vào họ tên người thứ " + (i + 1) + ":");
+        }
+
+        ds.sort(function (a, b) {
+            return a.localeCompare(b, "vi");
+        });
+
+        document.write("<h2>Danh sách đã sắp xếp:</h2>");
+        
+        for (var j = 0; j < ds.length; j++) {
+            document.write((j + 1) + ". " + ds[j] + "<br>");
+        }
+    </script>
+
+</body>
+</html>

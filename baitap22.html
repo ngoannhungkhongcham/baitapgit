@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sự kiện di chuyển chuột</title>
+    <meta charset="utf-8">
+    <style>
+        #status-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            border-top: 1px solid #ccc;
+            padding: 5px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    Họ tên: 
+    <input type="text" onmousemove="show('Bạn đang di chuyển chuột vào ô Họ Tên')">
+    <br><br>
+
+    Giới tính: 
+    <input type="radio" name="gt" onmousemove="show('Bạn chọn Nam')"> Nam
+    <input type="radio" name="gt" onmousemove="show('Bạn chọn Nữ')"> Nữ
+    <br><br>
+
+    <input type="button" value="Gửi" onmousemove="show('Bạn đang ở nút Gửi')">
+
+    <div id="status-bar">Sẵn sàng...</div>
+
+    <script>
+        function show(msg) {
+            document.getElementById("status-bar").innerText = msg;
+        }
+    </script>
+
+</body>
+</html>
