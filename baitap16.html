@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cập nhật trang web</title>
+    <script>
+        function ThayDoi() {
+            var mNen = document.getElementById("MauNen").value;
+            var mChu = document.getElementById("MauChu").value;
+            var tDe = document.getElementById("TieuDe").value;
+            var tThai = document.getElementById("TrangThai").value;
+
+            document.body.style.backgroundColor = mNen;
+            document.body.style.color = mChu;
+            document.title = tDe;
+            document.getElementById("tt").innerHTML = tThai;
+        }
+    </script>
+</head>
+
+<body>
+    Màu nền: <input type="text" id="MauNen"><br>
+    Màu chữ: <input type="text" id="MauChu"><br>
+    Tiêu đề: <input type="text" id="TieuDe"><br>
+    Trạng thái: <input type="text" id="TrangThai"><br>
+    
+    <button onclick="ThayDoi()">Cập nhật</button>
+
+    <p id="tt"></p>
+</body>
+</html>
